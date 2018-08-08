@@ -38,12 +38,13 @@ https://youtu.be/ajJ5bREu5KA<br>
 備註：當地城時間結束, 會自動退出, 停止運行
 
 # 環境配置
-電腦環境
+### 電腦環境
 - Windows or MacOS
 - [雷電模擬器](http://tw.ldmnq.com/)或[夜神模擬器](https://tw.bignox.com/)
 - 解析度 960 * 540
 - CPU 1, RAM 2048
-手機環境
+
+### 手機環境
 - iphoneX
 
 
