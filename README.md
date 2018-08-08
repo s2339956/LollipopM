@@ -20,8 +20,8 @@ iOS 使用 ipa<br>
 - 免越獄版
 
 # 展示
-https://youtu.be/ajJ5bREu5KA<br>
-
+[iphone run demo](https://youtu.be/ajJ5bREu5KA)<br>
+[android run demo](https://youtu.be/EWrT5NH3Aqw)<br>
 # 未來目標
 - ~~自動進入地成~~
 - ~~判定當前狀況(還有時間或新開始)~~
