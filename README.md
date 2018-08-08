@@ -10,8 +10,14 @@
 <br>
 android 請使用 apk <br>
 iOS 使用 ipa<br>
-<br>
-iOS 目前研製中<br>
+
+### android
+
+
+### iOS
+- 越獄版
+
+- 免越獄版
 
 # 展示
 https://youtu.be/ajJ5bREu5KA<br>
