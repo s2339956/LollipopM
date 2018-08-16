@@ -8,16 +8,7 @@
 如果您想貢獻資源請聯繫我, 如果這項目工具, 有協助到您, 請給我 Star, 我將得到更多支持, 讓我更有開發的動力, <br>
 目前因時間問題無暇在練其他角色作為參考, 如果有興趣的朋友, 歡迎提供技能套路或實戰練功影片, 讓我作為參考。<br>
 <br>
-android 請使用 apk <br>
-iOS 使用 ipa<br>
 
-### android
-
-
-### iOS
-- 越獄版
-
-- 免越獄版
 
 # 展示
 [iphone run demo](https://youtu.be/ajJ5bREu5KA)<br>
@@ -29,13 +20,26 @@ iOS 使用 ipa<br>
 - 優化運行流程
 
 # 使用方式
+
+### android
 1. 安裝"apk"至模擬器中
 2. 打開安裝好的"apk"
 3. 打開"楓之谷Ｍ", 並登入帳好選定角色
 (技能請在右下方大按鈕放置"究極突刺")
 4. 進入後不要移動人物
 5. 執行腳本, 解放雙手
-備註：當地城時間結束, 會自動退出, 停止運行
+備註：當地城時間結束, 會自動退出, 停止運行<br>
+需使用 [sudoHide](http://repo.xposed.info/module/com.sudocode.sudohide), 來繞過偵測
+
+### iOS
+- 越獄版<br>
+1. 至cydia搜尋 "[autotouch](https://autotouch.net/)", 並安裝
+2. 打開 autotouch, web 服務
+3. 導入腳本
+4. 啟動使用
+
+
+- 免越獄版<br>
 
 # 環境配置
 ### 電腦環境

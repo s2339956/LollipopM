@@ -7,6 +7,30 @@
 -------------C
 
 ]]--
+
+
+-- 可修改參數
+buffTime = 120 -- 輔助技能時間
+buffButton_XY = {245, 1836} -- 輔助技能按鈕位子
+
+adaptResolution(1125, 2436); -- 螢幕大小
+adaptOrientation(ORIENTATION_TYPE.PORTRAIT)
+--
+-- 以下新手請勿修改 
+startTime = os.time() 
+endTime = startTime+buffTime
+
+function discharge()
+    if os.time() >= endTime then
+        buffButton_B()
+        startTime = os.time()
+        endTime = startTime+120
+    else
+    
+    end
+
+end
+
 function wait(seconds)
     usleep(seconds * 10000000);
 end
@@ -26,6 +50,14 @@ function attack(index)
     end
 
 end
+
+-- 輔助技能
+function buffButton_B()
+    log("buffButton_B")
+    touch(353, 2273, 0.015);
+    touch(buffButton_XY[0], buffButton_XY[1], 0.015);
+    touch(353, 2273, 0.015);
+end
   
 -- 向下跳
 function jumpDown()
@@ -44,53 +76,55 @@ end
 
 -- 主要流程
 function process()
-    wait(0.03);
+    wait(0.02);
     touch(208.67, 469.43, 0.07); --往右
-    wait(0.03);
+    wait(0.02);
     attack(6)
-    wait(0.03);
+    wait(0.02);
     log("完成清除C層");
   
     touch(230.75, 223.17, 0.07); --往左
-    wait(0.03);
+    wait(0.02);
     touch(373.83, 345.31, 0.03); --往上
     attack(5)
-    wait(0.03);
+    wait(0.02);
     log("完成清除A層");
   
-    touch(208.67, 469.43, 0.08); --往右
-    wait(0.03);
+    touch(208.67, 469.43, 0.07); --往右
+    wait(0.02);
     jumpDown()
     attack(4)
-    wait(0.03);
+    wait(0.02);
     log("完成清除B層");
     
-    touch(208.67, 469.43, 0.15); --往右
+    touch(208.67, 469.43, 0.12); --往右
     wait(0.01);
     log("B層前往A-最右邊");
+
     
     touch(230.75, 223.17, 0.08); --往左
     wait(0.02);
     attack(6)
-    wait(0.03);
+    wait(0.02);
     log("2完成清除C層");
   
     touch(208.67, 469.43, 0.08); --往右
     wait(0.03);
     touch(373.83, 345.31, 0.03); --往上
-    wait(0.03);
+    wait(0.02);
     attack(5)
-    wait(0.03);
+    wait(0.02);
     log("2完成清除A層");
 
-    touch(230.75, 223.17, 0.08); --往左
-    wait(0.03);
+    touch(230.75, 223.17, 0.07); --往左
+    wait(0.02);
     jumpDown()
     attack(5)
-    wait(0.03);
+    wait(0.02);
     log("2完成清除B層");
   
-    touch(230.75, 223.17, 0.15); --往左
+    touch(230.75, 223.17, 0.12); --往左
+  
     
 end 
 
@@ -103,12 +137,10 @@ function moveToDestination()
     log("移動完成")
 end
 
-adaptResolution(1125, 2436);
-adaptOrientation(ORIENTATION_TYPE.PORTRAIT)
-
 moveToDestination()
 
 while (true) do
+    discharge()
     process()
 end
 
