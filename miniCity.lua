@@ -10,21 +10,30 @@
 
 
 -- 可修改參數
-buffTime = 120 -- 輔助技能時間
-buffButton_XY = {245, 1836} -- 輔助技能按鈕位子
+Buff_Time = 120; -- 輔助技能時間
+Buff_Button_XY = {
+    X = 245 ,
+    Y = 1836
+} -- 輔助技能按鈕位子
+
+Master_Skill_XY = {
+    X = 31.85 ,
+    Y = 2096.11
+} -- 主要攻擊技能按鈕位子
 
 adaptResolution(1125, 2436); -- 螢幕大小
-adaptOrientation(ORIENTATION_TYPE.PORTRAIT)
+adaptOrientation(ORIENTATION_TYPE.PORTRAIT);
 --
+
 -- 以下新手請勿修改 
 startTime = os.time() 
-endTime = startTime+buffTime
+endTime = startTime + Buff_Time;
 
 function discharge()
     if os.time() >= endTime then
-        buffButton_B()
-        startTime = os.time()
-        endTime = startTime+120
+        buffButton_B();
+        startTime = os.time();
+        endTime = startTime + 120;
     else
     
     end
@@ -46,16 +55,16 @@ end
 function attack(index)
     log("開始攻擊");
     for i=1, index do 
-        touch(131.85, 2096.11, 0.03);
+        touch(Master_Skill_XY.X, Master_Skill_XY.Y, 0.03);
     end
 
 end
 
 -- 輔助技能
 function buffButton_B()
-    log("buffButton_B")
+    log("buffButton_B");
     touch(353, 2273, 0.015);
-    touch(buffButton_XY[0], buffButton_XY[1], 0.015);
+    touch(Buff_Button_XY.X, Buff_Button_XY.Y, 0.015);
     touch(353, 2273, 0.015);
 end
   
@@ -90,8 +99,8 @@ function process()
     wait(0.02);
     log("完成清除A層");
   
-    touch(208.67, 469.43, 0.07); --往右
-    wait(0.02);
+    touch(208.67, 469.43, 0.06); --往右
+    wait(0.01);
     jumpDown()
     attack(4)
     wait(0.02);
@@ -116,8 +125,8 @@ function process()
     wait(0.02);
     log("2完成清除A層");
 
-    touch(230.75, 223.17, 0.07); --往左
-    wait(0.02);
+    touch(230.75, 223.17, 0.06); --往左
+    wait(0.01);
     jumpDown()
     attack(5)
     wait(0.02);
@@ -138,6 +147,7 @@ function moveToDestination()
 end
 
 moveToDestination()
+buffButton_B()
 
 while (true) do
     discharge()
