@@ -27,11 +27,15 @@
 1. 安裝"apk"至模擬器中
 2. 打開安裝好的"apk"
 3. 打開"楓之谷Ｍ", 並登入帳好選定角色
-(技能請在右下方大按鈕放置"究極突刺")
 4. 進入後不要移動人物
 5. 執行腳本, 解放雙手
 備註：當地城時間結束, 會自動退出, 停止運行<br>
 需使用 [sudoHide](http://repo.xposed.info/module/com.sudocode.sudohide), 來繞過偵測
+
+- lua 腳本
+1. 安裝[ankulua](https://play.google.com/store/apps/details?id=com.appautomatic.ankulua.trial&hl=zh_TW)
+2. 導入 lua 腳本
+3. 開始使用
 
 ### iOS
 - 越獄版<br>
@@ -42,6 +46,11 @@
 
 
 - 免越獄版<br>
+
+
+備註: lua 腳本, 目前只適用於黑騎士, 技能擺放, 大攻擊鍵為 "究極突刺", 由最下方數上來第二個擺放"小眼睛技能",<br>
+lua 腳本都必須打定位後運行, 
+
 
 # 環境配置
 ### 電腦環境

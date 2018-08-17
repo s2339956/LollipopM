@@ -9,7 +9,7 @@
 ]]--
 
 
--- 可修改參數
+-- 以下可修改參數
 Buff_Time = 120; -- 輔助技能時間
 Buff_Button_XY = {
     X = 245 ,
@@ -17,9 +17,11 @@ Buff_Button_XY = {
 } -- 輔助技能按鈕位子
 
 Master_Skill_XY = {
-    X = 31.85 ,
+    X = 131.85 ,
     Y = 2096.11
 } -- 主要攻擊技能按鈕位子
+
+-- 以上可以修改
 
 adaptResolution(1125, 2436); -- 螢幕大小
 adaptOrientation(ORIENTATION_TYPE.PORTRAIT);
