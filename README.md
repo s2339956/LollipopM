@@ -62,4 +62,8 @@ lua 腳本都必須打定位後運行,
 ### 手機環境
 - iphoneX
 
+# weChat 討論群組
+
+![](https://github.com/s2339956/LollipopM/blob/master/image/weChatGroup.jpg?raw=true)
+
 
