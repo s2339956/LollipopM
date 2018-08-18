@@ -1,4 +1,10 @@
--- 可修改參數
+--[[
+作者: TinXie
+聯繫: s2339956@gmail.com
+]]--
+	
+
+-- 以下可修改參數
 Buff_Time = 120 -- 輔助技能時間
 Buff_Button_XY = {
     X = 245 ,
@@ -23,6 +29,7 @@ Path_Right_XY = {
 	X = 208 ,
     Y = 469
 } -- 右
+-- 以上可以修改
 
 adaptResolution(1125, 2436); -- 螢幕大小
 adaptOrientation(ORIENTATION_TYPE.PORTRAIT);
@@ -30,11 +37,12 @@ adaptOrientation(ORIENTATION_TYPE.PORTRAIT);
 
 -- 以下新手請勿修改
 startTime = os.time();
-endTime = startTime+Buff_Time;
+endTime = startTime + Buff_Time;
 
 -- 左右旋轉工具
 opTime = os.time();
 starOp = opTime + 300;
+LeftOrRight = 1 -- 判斷當前方向
 
 function discharge()
     if os.time() >= endTime then
@@ -74,8 +82,8 @@ function attack(index)
 end
 
 function attackOP()
-	touchDown(5, 357, 1947);
-	touchDown(6, 208.67, 469.43);
+	touchDown(5, 357, 1947); -- 技能
+	touchDown(6, 208.67, 469.43); 
 	wait(0.45);
 	touchDown(5, 357, 1947);
 	touchMove(6, 230.75, 223.17);
@@ -84,6 +92,11 @@ function attackOP()
 	wait(0.05);
 	touchUp(5, 357, 1947);
     wait(0.05);
+    if LeftOrRight == 1 then 
+    	touch(Path_Right_XY.X, Path_Right_XY.Y, 0.02); --往右
+    else
+        touch(Path_Left_XY.X, Path_Left_XY.Y, 0.02); --往左
+    end
 	
 end
 
@@ -98,11 +111,13 @@ end
 function process()
     wait(0.02);
     touch(Path_Right_XY.X, Path_Right_XY.Y, 0.02); --往右
+    LeftOrRight = 1;
     wait(0.02);
     attack(12)
     wait(0.02);
     log("");
 	touch(Path_Left_XY.X, Path_Left_XY.Y, 0.02); --往左
+	LeftOrRight = 2; 
 	wait(0.02);
     attack(12)
     wait(0.02);

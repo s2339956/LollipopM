@@ -30,9 +30,9 @@ Path_Right_XY = {
     Y = 432
 } -- 右
 -- 以上可以修改
-
-Settings:setCompareDimension(true, 960);
-Settings:setScriptDimension(true, 960);
+DEFAULT_WIDTH = 960;
+Settings:setCompareDimension(true, DEFAULT_WIDTH);
+Settings:setScriptDimension(true, DEFAULT_WIDTH);
 -- 
 
 -- 以下新手請勿修改
@@ -120,7 +120,6 @@ while (true) do
     discharge();
     process();
 end
-
 
 
 
