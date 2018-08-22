@@ -1,3 +1,9 @@
+--[[
+作者: TinXie
+聯繫: s2339956@gmail.com
+使用地圖：Mini_Dungeon(迷你地城)
+]]--
+
 -- for iphone X, black Knight
 
 --[[
