@@ -42,7 +42,7 @@ endTime = startTime + Buff_Time;
 -- 左右旋轉工具
 opTime = os.time();
 starOp = opTime + 300;
-LeftOrRight = 1 -- 判斷當前方向
+LeftOrRight = 1; -- 判斷當前方向
 
 function discharge()
     if os.time() >= endTime then
@@ -113,13 +113,13 @@ function process()
     touch(Path_Right_XY.X, Path_Right_XY.Y, 0.02); --往右
     LeftOrRight = 1;
     wait(0.02);
-    attack(12)
+    attack(12);
     wait(0.02);
     log("");
 	touch(Path_Left_XY.X, Path_Left_XY.Y, 0.02); --往左
 	LeftOrRight = 2; 
 	wait(0.02);
-    attack(12)
+    attack(12);
     wait(0.02);
     log("");
 

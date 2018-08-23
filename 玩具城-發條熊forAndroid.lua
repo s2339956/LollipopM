@@ -41,7 +41,7 @@ endTime = startTime + Buff_Time;
 
 -- 左右旋轉工具
 opTime = os.time();
-starOp = opTime + 300;
+starOp = opTime + 600;
 
 function discharge()
     if os.time() >= endTime then
@@ -55,29 +55,29 @@ function isOP()
 	if os.time() >= starOp then
 		attackOP();
 		opTime = os.time();
-		starOp = opTime + 300;
+		starOp = opTime + 600;
 	end
 end
 
 function touch(x, y, sec)
 
     touchDown(Location(x,y), sec);
-    wait(0.2);
+    wait(0.5);
  	touchUp(Location(x,y), sec);
-   	wait(0.2);
+   	wait(0.5);
 end
 
 -- 攻擊
 function attack(index)
     -- log("開始攻擊");
     for i=1, index do 
-		isOP();
-		touch(Master_Skill_XY.X, Master_Skill_XY.Y, 0.6);
+		touch(Master_Skill_XY.X, Master_Skill_XY.Y, 0.7);
     end
 
 end
 
 function attackOP()
+	-- touch(Path_Right_XY.X, Path_Right_XY.Y, 0.4); 
 	-- touchDown(5, 357, 1947);
 	-- touchDown(6, 208.67, 469.43);
 	-- wait(4.5);
@@ -88,6 +88,10 @@ function attackOP()
 	-- wait(0.05);
 	-- touchUp(5, 357, 1947);
  --    wait(0.05);
+ 	touch(251, 504, 0.3);
+ 	wait(1);
+ 	touch(479, 431, 0.3);
+
 	
 end
 
@@ -119,6 +123,7 @@ buffButton_B();
 while (true) do
     discharge();
     process();
+
 end
 
 
