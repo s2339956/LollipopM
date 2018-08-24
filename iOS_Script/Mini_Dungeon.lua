@@ -14,8 +14,8 @@
 
 ]]--
 
-require "Config"
-require "Tools"
+require "Require.Config"
+require "Require.Tools"
 
 -- 以下新手請勿修改 
 startTime = os.time() 
@@ -118,14 +118,6 @@ function moveToDestination()
     wait(0.04);
     touch(Path_Left_XY.X, Path_Left_XY.Y, 0.15); --往左
     log("移動完成")
-end
-
-function checkAppState()
-    if appState("com.nexon.maplem.global") == "ACTIVATED" then 
-        return true
-    else 
-        return false
-    end
 end
 
 local isFirstLoad = true

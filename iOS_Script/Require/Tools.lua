@@ -10,3 +10,11 @@ function touch(x, y, sec)
     touchUp(0, x, y);
     wait(sec);
 end
+
+function checkAppState()
+    if appState("com.nexon.maplem.global") == "ACTIVATED" then 
+        return true
+    else 
+        return false
+    end
+end

@@ -4,36 +4,9 @@
 ]]--
 	
 
--- 以下可修改參數
-Buff_Time = 120 -- 輔助技能時間
-Buff_Button_XY = {
-    X = 245 ,
-    Y = 1836
-} -- 輔助技能按鈕位子
 
-Master_Skill_XY = {
-    X = 131.85,
-    Y = 2096.11
-} -- 主要攻擊技能按鈕位子
-
-Form_Feed_Button_XY = {
-	X = 353 ,
-    Y = 2273
-} -- 技能換頁
-
-Path_Left_XY = {
-	X = 230 ,
-    Y = 223
-} -- 左
-Path_Right_XY = {
-	X = 208 ,
-    Y = 469
-} -- 右
--- 以上可以修改
-
-adaptResolution(1125, 2436); -- 螢幕大小
-adaptOrientation(ORIENTATION_TYPE.PORTRAIT);
--- 
+require "Require.Config"
+require "Require.Tools"
 
 -- 以下新手請勿修改
 startTime = os.time();
@@ -60,17 +33,6 @@ function isOP()
 	end
 end
 
-function wait(seconds)
-    usleep(seconds * 10000000);
-end
-
-function touch(x, y, sec)
-    touchDown(0, x, y);
-    wait(sec);
-    touchUp(0, x, y);
-    wait(sec);
-end
-
 -- 攻擊
 function attack(index)
     log("開始攻擊");
@@ -83,12 +45,12 @@ end
 
 function attackOP()
 	touchDown(5, 357, 1947); -- 技能
-	touchDown(6, 208.67, 469.43); 
+	touchDown(6, Path_Right_XY.X, Path_Right_XY.Y); 
 	wait(0.45);
 	touchDown(5, 357, 1947);
-	touchMove(6, 230.75, 223.17);
+	touchMove(6, Path_Left_XY.X, Path_Left_XY.Y);
 	wait(0.4)
-	touchUp(6, 230.75, 223.17);
+	touchUp(6, Path_Left_XY.X, Path_Left_XY.Y);
 	wait(0.05);
 	touchUp(5, 357, 1947);
     wait(0.05);
