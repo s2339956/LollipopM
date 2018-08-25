@@ -52,9 +52,15 @@ end
 -- 向下跳
 function jumpDown()
     log("向下跳");
-    touchDown(1, Jump_Button_XY.X, Jump_Button_XY.Y);
-    wait(0.03);
-    touchDown(1, Jump_Button_XY.X, Jump_Button_XY.Y);
+    touchDown(6, Path_Down_XY.X, Path_Down_XY.Y);
+    wait(0.009);
+    touchUp(6, Path_Down_XY.X, Path_Down_XY.Y);
+    wait(0.009);
+
+    touchDown(6, Path_Down_XY.X, Path_Down_XY.Y);
+    wait(0.009);
+    touchUp(6, Path_Down_XY.X, Path_Down_XY.Y);
+    wait(0.009);
 end
 
 -- 主要流程
@@ -62,21 +68,22 @@ function process()
     wait(0.02);
     touch(Path_Right_XY.X, Path_Right_XY.Y, 0.07); --往右
     wait(0.02);
-    attack(6)
+    attack(6);
     wait(0.02);
     log("完成清除C層");
   
     touch(Path_Left_XY.X, Path_Left_XY.Y, 0.07); --往左
     wait(0.02);
     touch(Path_Up_XY.X, Path_Up_XY.Y, 0.03); --往上
-    attack(5)
+    attack(5);
     wait(0.02);
     log("完成清除A層");
   
     touch(Path_Right_XY.X, Path_Right_XY.Y, 0.06); --往右
     wait(0.01);
-    jumpDown()
-    attack(4)
+    jumpDown();
+    wait(0.09);
+    attack(4);
     wait(0.02);
     log("完成清除B層");
     
@@ -87,7 +94,7 @@ function process()
     
     touch(Path_Left_XY.X, Path_Left_XY.Y, 0.08); --往左
     wait(0.02);
-    attack(6)
+    attack(6);
     wait(0.02);
     log("2完成清除C層");
   
@@ -95,14 +102,15 @@ function process()
     wait(0.03);
     touch(Path_Up_XY.X, Path_Up_XY.Y, 0.03); --往上
     wait(0.02);
-    attack(5)
+    attack(5);
     wait(0.02);
     log("2完成清除A層");
 
     touch(Path_Left_XY.X, Path_Left_XY.Y, 0.06); --往左
     wait(0.01);
     jumpDown()
-    attack(5)
+    wait(0.09);
+    attack(4)
     wait(0.02);
     log("2完成清除B層");
   
@@ -113,23 +121,27 @@ end
 
 --移動至C層
 function moveToDestination()
-    log("開始移動")
+    log("開始移動");
     touch(Path_Right_XY.X, Path_Right_XY.Y, 0.08); --往右
     wait(0.04);
     touch(Path_Left_XY.X, Path_Left_XY.Y, 0.15); --往左
-    log("移動完成")
+    log("移動完成");
 end
 
-local isFirstLoad = true
+local isFirstLoad = true;
 while (true) do
     if appState("com.nexon.maplem.global") == "ACTIVATED" then 
         if isFirstLoad == true then
-            moveToDestination()
-            buffButton_B()
-            isFirstLoad = false
+            -- 開始
+            opneMiniDungeon();
+            moveToDestination();
+            buffButton_B();
+            isFirstLoad = false;
         end
-    discharge()
-    process()
+    searchCompletionButton();    
+    discharge();
+    process();
+
     else
         alert("不在遊戲中, 已停止腳本");
         keyDown(KEY_TYPE.VOLUME_DOWN_BUTTON);
@@ -137,6 +149,9 @@ while (true) do
         keyUp(KEY_TYPE.VOLUME_DOWN_BUTTON);
     end 
 end
+
+
+
 
 
 
