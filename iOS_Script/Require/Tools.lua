@@ -48,7 +48,7 @@ function opneMiniDungeon()
     end
 end
 
--- 搜索迷你帝城完成按鈕, 點擊
+-- 搜索迷你帝城完成按鈕, 點擊, 回傳 bool
 function searchCompletionButton() 
     if getColor(MiniDungeon.EndBtnA.x, MiniDungeon.EndBtnA.y) == MiniDungeon.EndBtnA.color and 
         getColor(MiniDungeon.EndBtnB.x, MiniDungeon.EndBtnB.y) == MiniDungeon.EndBtnB.color and 
@@ -56,8 +56,10 @@ function searchCompletionButton()
         getColor(MiniDungeon.EndBtnD.x, MiniDungeon.EndBtnD.y) == MiniDungeon.EndBtnD.color then
         touch(MiniDungeon.EndBtnC.x, MiniDungeon.EndBtnC.y, 0.04);
         log("迷你地城 - 點擊完成按鈕");
+        return true;
     else
         log("迷你地城 - 沒有找到完成按鈕");
+        return false;
     end
 end
 
