@@ -161,7 +161,7 @@ function moveToDestination()
     -- log("開始移動")
     touch(Path_Right_XY.X, Path_Right_XY.Y, 0.8); --往右
     wait(0.4);
-    touch(Path_Left_XY.X, Path_Left_XY.Y,, 1.5); --往左
+    touch(Path_Left_XY.X, Path_Left_XY.Y, 1.5); --往左
     -- log("移動完成")
 end
 
